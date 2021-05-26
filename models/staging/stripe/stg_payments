@@ -1,0 +1,11 @@
+with payments as (
+
+    select
+        orderid as order_id
+        ,paymentmethod as payment_method
+        ,amount
+        ,status
+    from raw.stripe.payment
+)
+
+select * from payments
