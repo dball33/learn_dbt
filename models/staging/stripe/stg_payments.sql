@@ -3,8 +3,10 @@ with payments as (
     select
         orderid as order_id
         ,paymentmethod as payment_method
-        ,amount
+        ,amount/100 as amount
         ,status
+        ,created as created_at
+        ,id as payment_id
     from raw.stripe.payment
 )
 
