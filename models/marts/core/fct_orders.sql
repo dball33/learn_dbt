@@ -25,7 +25,7 @@ with orders as (
         orders.order_id
         ,orders.customer_id
         ,orders.order_date
-        ,order_payments.amount
+        ,coalesce(order_payments.amount,0) as amount
     from orders
     left join order_payments using (order_id)
 )
